@@ -14,12 +14,15 @@
 }
 .Profile_avatar{
     width: 200px;
-    border: 1px solid red;
 }
 .Profile_ava {
     width: 200px;
   }
-
+.Profile_postText{
+    width: 70%;
+    height: 100px;
+    resize: none;
+}
   .Profile_SendMessage{
     width: 100px;
     height: 20px;

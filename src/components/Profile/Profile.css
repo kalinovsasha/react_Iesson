@@ -1,6 +1,7 @@
 .Profile_Main {
   width: 100%;
   margin-left: 15px;
+  background-color: 0;
 }
 
 .Profile_logo {
@@ -12,15 +13,21 @@
   display: flex;
 }
 
+.Profile_avatar {
+  width: 200px;
+}
+
 .Profile_ava {
   width: 200px;
 }
-.Profile_postText{
+
+.Profile_postText {
   width: 70%;
   height: 100px;
   resize: none;
 }
-.Profile_SendMessage{
+
+.Profile_SendMessage {
   width: 100px;
   height: 20px;
   margin-right: 30%;
@@ -29,6 +36,9 @@
   background-color: royalblue;
   outline: none;
 }
-.Profile_SendMessage:hover{
-  background-color: rgb(26, 65, 182);
+
+.Profile_SendMessage:hover {
+  background-color: #1a41b6;
 }
+
+/*# sourceMappingURL=Profile.css.map */

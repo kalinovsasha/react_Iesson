@@ -1,14 +1,13 @@
 .App-header {
   width: 1400px;
-  height: 100px;
+  height: 120px;
   margin: 0 auto;
   background-color: #333;
   display: flex;
 }
 .App-header .header_logo {
   align-self: center;
-  width: 50px;
-  margin-left: 70px;
+  width: 70px;
 }
 
 /*# sourceMappingURL=Header.css.map */
