@@ -9,4 +9,17 @@
   font-weight: 600;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  font-size: 1.14em;
+}
+
 /*# sourceMappingURL=leftMenu.css.map */

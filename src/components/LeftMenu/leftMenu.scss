@@ -1,3 +1,4 @@
+$hrefColor:black;
 .LeftMenu{
     width: 15%;
     background-color: rgb(236, 104, 104); 
@@ -9,4 +10,14 @@
             font-weight: 600;
         }
     }
+}
+a{
+    color: $hrefColor;
+    text-decoration: none;
+}
+a:visited{
+    color:$hrefColor;
+}
+a:hover{
+    font-size: 1.14em;
 }

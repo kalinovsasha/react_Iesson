@@ -1,0 +1,33 @@
+.Dialogs_Main {
+  margin-left: 15px;
+  width: 100%;
+  min-height: 700px;
+  background-color: #e4e4e4;
+  display: flex;
+}
+
+.Dialogs_MesText {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.Dialogs_Interlocutor {
+  width: 20%;
+  height: 94%;
+  border-right: 2px solid  #bdbbbb;
+}
+.Dialogs_Interlocutor li {
+  margin-top: 7px;
+  font-size: 1.12em;
+}
+
+.Dialog_Message {
+  min-height: 70px;
+  min-width: 200px;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-left: 10%;
+  border: 2px solid grey;
+}
+
+/*# sourceMappingURL=Dialogs.css.map */
