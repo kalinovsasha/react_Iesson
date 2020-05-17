@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 function Dialogs(props) {
     return(
         <div className="Dialogs_Main">
-            <section className="Dialogs_MesText">Messages</section>
             <div className="Dialogs_Interlocutor">
+            <section className="Dialogs_MesText">Messages</section>
                 <ul className="Dialog_FriendList">
-                    <li><Link to="">Вася</Link></li>
+                    <li><Link to="/Dialogs/1">Вася</Link></li>
                     <li><Link to="">Петя</Link></li>
                     <li><Link to="">Коля</Link></li>
                 </ul>

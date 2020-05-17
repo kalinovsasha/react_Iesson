@@ -11,10 +11,12 @@
 }
 .Dialogs_Interlocutor{
     width: 20%;
-    height: 94%;
+    height: 100%;
     border-right: 2px solid  #bdbbbb;
+    
 
     li{
+        margin-left: 5px;
         margin-top: 7px;
         font-size: 1.12em;
     }

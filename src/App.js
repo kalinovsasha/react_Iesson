@@ -19,8 +19,8 @@ function App() {
           <LeftMenu/>
           <Switch>
           <Route path="/ " component={Profile}/>
-          <Route path="/profile" component={Profile}/>
-          <Route path="/Dialogs" component={Dialogs}/>
+          <Route  path="/profile" component={Profile}/>
+          <Route exact path="/Dialogs" component={Dialogs}/>
           </Switch>
     </div>
     </div>
