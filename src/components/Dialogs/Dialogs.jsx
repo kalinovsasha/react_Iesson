@@ -1,13 +1,11 @@
 import React from 'react';
 import "./Dialogs.css";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 
 function Dialogs(props) {
-    let friends =[{id:"Dialogs/1",name:"Вася"},{id:"Dialogs/2",name:"Serje"},{id:"Dialogs/3",name:"Петя"},{id:"Dialogs/4",name:"Коля"}];
-    let friend = friends.map((item)=><li><Link to={item.id}> {item.name}</Link></li>);
-   
+    let friend =props.friends.map((item)=><li><NavLink to={item.id}> {item.name}</NavLink></li>);
     return(
         <div className="Dialogs_Main">
             <div className="Dialogs_Interlocutor">

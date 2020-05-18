@@ -3,8 +3,7 @@ import s from "./Post.module.css";
 import ava from '../../img/unnamed.jpg';
 
 const Post= (props)=>{
-    let avatar=props.ava==undefined?ava:props.ava;
-    
+    let avatar=props.ava===undefined?ava:props.ava;
     return(
         <div className={s.post_main}>
             <img className={s.post_ava} src={avatar} alt="head" />

@@ -9,18 +9,18 @@ import Dialogs from './components/Dialogs/Dialogs';
 
 
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
     <div className="App">
       <Header/>
-
       <div className="Main">
           <LeftMenu/>
           <Switch>
-          <Route path="/ " component={Profile}/>
-          <Route  path="/profile" component={Profile}/>
-          <Route exact path="/Dialogs" component={Dialogs}/>
+          <Route  path="/profile"> {/*Передача компонента внутри тега Route    */ }
+          <Profile prof={props.profInfo} post={props.posts}/>
+          </Route>
+          <Route exact path="/Dialogs" component={()=><Dialogs friends={props.dialogsFriendList}/> }/> {/*Передача компонента через  component     */ }
           </Switch>
     </div>
     </div>
