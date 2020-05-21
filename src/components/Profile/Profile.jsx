@@ -9,8 +9,15 @@ import Post from '../Posts/Posts';
 function Profile (props){
     let avatar=props.prof.ava===undefined?ava:props.prof.ava;
     let post = props.post.map((p)=><Post mes={p.mes} ava={p.ava}/>);
+    let textarea = React.createRef(); //аналог getElementById, только мы создаем ссылку на объект
+        
+    let send = ()=> {
+            let textareaText=textarea.current.value;
+            alert(textareaText);
+    };
     
     return(
+        
         <div className="Profile_Main">
             <div className="Profile_cont"><img className="Profile_logo" src={head} alt="head" /></div>
             <div className="Profile_user">
@@ -25,8 +32,8 @@ function Profile (props){
                 </div>
             </div>
             <div className="Posts">
-            <textarea className="Profile_postText" value="" placeholder="Enter your text" ></textarea>
-            <div><button className="Profile_SendMessage">Send</button> </div>
+            <textarea  ref={textarea} className="Profile_postText" placeholder="Enter your text" ></textarea>
+            <div><button className="Profile_SendMessage" onClick={send} >Send</button> </div>
             </div>
             <br /><br />
              {/*Вывод сообщений  из пропсов */ }
