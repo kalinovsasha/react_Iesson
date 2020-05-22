@@ -8,13 +8,16 @@ import Post from '../Posts/Posts';
 
 function Profile (props){
     let avatar=props.prof.ava===undefined?ava:props.prof.ava;
-    let post = props.post.map((p)=><Post mes={p.mes} ava={p.ava}/>);
+    let post = props.post.map((p)=><Post mes={p.mes} ava={p.ava}/>); // Переделывание поста в реакт объект для дальнейшего вывода
     let textarea = React.createRef(); //аналог getElementById, только мы создаем ссылку на объект
-        
-    let send = ()=> {
+    
+    //Пример функции для выводв текста из textarea   
+ /*   let send = ()=> {
             let textareaText=textarea.current.value;
             alert(textareaText);
-    };
+    }; */
+    
+    let send = ()=>  props.addPost(textarea.current.value); // Вывод поста по кнопке
     
     return(
         

@@ -1,12 +1,16 @@
 .LeftMenu {
+  margin-top: 10px;
   width: 15%;
-  background-color: #ec6868;
+  background-color: #609cf7;
 }
 .LeftMenu ul li {
   list-style: none;
   margin-top: 8px;
   font-size: 18px;
   font-weight: 600;
+}
+.LeftMenu ul li:hover {
+  background-color: rgba(33, 119, 248, 0.4);
 }
 
 a {

@@ -1,13 +1,18 @@
 $hrefColor:black;
 .LeftMenu{
+    margin-top: 10px;
     width: 15%;
-    background-color: rgb(236, 104, 104); 
+    background-color:rgb(96, 156, 247);
     ul{
         li{
             list-style: none;
             margin-top: 8px;
             font-size: 18px;
             font-weight: 600;
+        }
+        li:hover{
+            background-color: rgba(33, 119, 248, 0.4);
+           
         }
     }
 }

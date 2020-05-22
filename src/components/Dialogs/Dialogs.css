@@ -22,13 +22,34 @@
   font-size: 1.12em;
 }
 
+.Dialog_MessagesList {
+  min-width: 40%;
+}
+
 .Dialog_Message {
   min-height: 70px;
-  min-width: 200px;
+  width: 100%;
   border-radius: 5px;
   margin-top: 15px;
   margin-left: 10%;
   border: 2px solid grey;
 }
 
-/*# sourceMappingURL=Dialogs.css.map */
+.Dialog_TextArea {
+  margin-top: 5%;
+  margin-left: 10%;
+  width: 100%;
+  height: 200px;
+  resize: none;
+}
+
+.Dialog_Send {
+  width: 120px;
+  height: 40px;
+  font-weight: bold;
+  margin-left: 10%;
+}
+
+.Dialog_Send:hover {
+  background-color: #3c14f0;
+}

@@ -4,6 +4,7 @@
 }
 
 .Profile_logo {
+  margin-top: 10px;
   width: 100%;
 }
 
@@ -23,7 +24,6 @@
 .Profile_postText {
   width: 70%;
   height: 100px;
-  
   resize: none;
 }
 
