@@ -7,8 +7,9 @@ import Post from '../Posts/Posts';
 
 
 function Profile (props){
-    let avatar=props.prof.ava===undefined?ava:props.prof.ava;
-    let post = props.post.map((p)=><Post mes={p.mes} ava={p.ava}/>); // Переделывание поста в реакт объект для дальнейшего вывода
+    console.log(props.bufPost.mes);
+    let avatar=props.profInfo.ava===undefined?ava:props.profInfo.ava;
+    let post = props.posts.map((p)=><Post mes={p.mes} ava={p.ava}/>); // Переделывание поста в реакт объект для дальнейшего вывода
     let textarea = React.createRef(); //аналог getElementById, только мы создаем ссылку на объект
     
     //Пример функции для выводв текста из textarea   
@@ -17,7 +18,8 @@ function Profile (props){
             alert(textareaText);
     }; */
     
-    let send = ()=>  props.addPost(textarea.current.value); // Вывод поста по кнопке
+   
+    let newpost = ()=>props.newPost(textarea.current.value); // Вытаскиваем текст их textarea и записываем в state
     
     return(
         
@@ -27,23 +29,27 @@ function Profile (props){
                 <div className="Profile_avatar"> <img className="Profile_ava" src={avatar} alt="head" /></div>
                 <div className="Profile_info">
                     <ul>
-                        <li>Дата рождения: {props.prof.birthday}</li>
-                        <li>Страна: {props.prof.country}</li>
-                        <li>Образование: {props.prof.educate}</li>
-                        <li>Веб сайт: {props.prof.website}</li>
+                        <li>Дата рождения: {props.profInfo.birthday}</li>
+                        <li>Страна: {props.profInfo.country}</li>
+                        <li>Образование: {props.profInfo.educate}</li>
+                        <li>Веб сайт: {props.profInfo.website}</li>
                     </ul>
                 </div>
             </div>
             <div className="Posts">
-            <textarea  ref={textarea} className="Profile_postText" placeholder="Enter your text" ></textarea>
-            <div><button className="Profile_SendMessage" onClick={send} >Send</button> </div>
+            <textarea onChange={newpost}  ref={textarea}  className="Profile_postText" placeholder="Write message" value={props.bufPost.mes}></textarea>
+            <div><button className="Profile_SendMessage" onClick={props.addPost} >Send</button> </div>
             </div>
             <br /><br />
-             {/*Вывод сообщений  из пропсов */ }
+            
+            {/*Вывод сообщений  из пропсов */ }
             {post}
+            
             {/*Вывод тестовых сообщений   */ }
+            { /*
             <Post mes="Hello" ava="https://yt3.ggpht.com/a/AATXAJwcRz4MbWjSrTeWdpzfyVsPC97gRqnc_YC-qQ=s900-c-k-c0xffffffff-no-rj-mo"/> 
             <Post mes="Hello, my name is test"/> 
+            */}
         </div>
 
     );

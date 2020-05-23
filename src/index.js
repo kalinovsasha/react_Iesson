@@ -1,23 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+//import React from 'react';
+//import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+//import App from './App';
 import * as serviceWorker from './serviceWorker';
 import state from './redux/state'
-import {addPost} from './redux/state'
+import {addPost, newPost} from './redux/state'
+import {Render} from './render'
 
 
-/*Данные передаем из state через пропсы в компоненты   */
+Render(state,addPost,newPost);
 
+
+
+
+/*
 ReactDOM.render(
   <React.StrictMode>
-    <App profInfo={state.profInfo} posts={state.posts} dialogsFriendList={state.dialogsFriendList} addPost={addPost} />
+    <App profInfo={state.profInfo} posts={state.posts} bufPost={state.bufPost}  dialogsFriendList={state.dialogsFriendList} addPost={addPost} newPost={newPost} />
     
   </React.StrictMode>,
   document.getElementById('root')
 );
+*/
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
