@@ -11,13 +11,7 @@ export let store={
 },
 
 renderDom(store){
-  ReactDOM.render(
-    <React.StrictMode>
-      <App profInfo={store.state.profInfo} posts={store.state.posts} dialogsFriendList={store.state.dialogsFriendList} addPost={addPost} dispatch={store.dispatch} />
-      
-    </React.StrictMode>,
-    document.getElementById('root')
-  );
+ throw(Error);
 },
 
 subscribeRender(subscriber){
@@ -34,19 +28,6 @@ dispatch(action){
 }
 
 
-}
-
-export function addPost (txt){
-    
-    store.state.posts.push({mes:txt});
-    
-    ReactDOM.render(
-        <React.StrictMode>
-          <App profInfo={store.state.profInfo} posts={store.state.posts} dialogsFriendList={store.state.dialogsFriendList} addPost={addPost}/>
-          
-        </React.StrictMode>,
-        document.getElementById('root')
-      );
 }
 
 export default store;
