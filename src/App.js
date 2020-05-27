@@ -13,15 +13,14 @@ function App(props) {
   return (
     
     <BrowserRouter>
-    {console.log(props)}
     <div className="App">
       <Header/>
       <div className="Main">
           <LeftMenu/>
           <Switch>
-          <Route exact path="/" component={()=><Profile prof={props.profInfo} post={props.posts}/> }/> {/*Передача компонента через  component     */ }
+          <Route exact path="/" component={()=><Profile prof={props.profInfo} post={props.posts}  dispatch={props.dispatch} /> }/> {/*Передача компонента через  component     */ }
           <Route  path="/profile"> {/*Передача компонента внутри тега Route    */ }
-          <Profile prof={props.profInfo} post={props.posts} addPost={props.addPost} dispatch={props.dispatch}/>
+          <Profile prof={props.profInfo} post={props.posts}  dispatch={props.dispatch}/>
           </Route>
           <Route exact path="/Dialogs" component={()=><Dialogs friends={props.dialogsFriendList}/> }/> {/*Передача компонента через  component     */ }
           </Switch>

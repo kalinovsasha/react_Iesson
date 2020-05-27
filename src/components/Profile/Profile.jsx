@@ -13,7 +13,6 @@ function Profile (props){
     
    
     
-    //let send = ()=>  props.addPost(textarea.current.value); // Вывод поста по кнопке
 
     let send = ()=>  props.dispatch({type:"ADD",txt:textarea.current.value}); // Вывод поста по кнопке
     
