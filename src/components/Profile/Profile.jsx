@@ -11,13 +11,11 @@ function Profile (props){
     let post = props.post.map((p)=><Post mes={p.mes} ava={p.ava}/>); // Переделывание поста в реакт объект для дальнейшего вывода
     let textarea = React.createRef(); //аналог getElementById, только мы создаем ссылку на объект
     
-    //Пример функции для выводв текста из textarea   
- /*   let send = ()=> {
-            let textareaText=textarea.current.value;
-            alert(textareaText);
-    }; */
+   
     
-    let send = ()=>  props.addPost(textarea.current.value); // Вывод поста по кнопке
+    //let send = ()=>  props.addPost(textarea.current.value); // Вывод поста по кнопке
+
+    let send = ()=>  props.dispatch({type:"ADD",txt:textarea.current.value}); // Вывод поста по кнопке
     
     return(
         
@@ -41,9 +39,7 @@ function Profile (props){
             <br /><br />
              {/*Вывод сообщений  из пропсов */ }
             {post}
-            {/*Вывод тестовых сообщений   */ }
-            <Post mes="Hello" ava="https://yt3.ggpht.com/a/AATXAJwcRz4MbWjSrTeWdpzfyVsPC97gRqnc_YC-qQ=s900-c-k-c0xffffffff-no-rj-mo"/> 
-            <Post mes="Hello, my name is test"/> 
+            
         </div>
 
     );

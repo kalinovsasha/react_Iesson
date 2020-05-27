@@ -3,15 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import state from './redux/state'
-import {addPost} from './redux/state'
+import {store,addPost} from './redux/state'
 
 
 /*Данные передаем из state через пропсы в компоненты   */
 
 ReactDOM.render(
   <React.StrictMode>
-    <App profInfo={state.profInfo} posts={state.posts} dialogsFriendList={state.dialogsFriendList} addPost={addPost} />
+    <App profInfo={store.state.profInfo} posts={store.state.posts} dialogsFriendList={store.state.dialogsFriendList} addPost={addPost} dispatch={store.dispatch} />
     
   </React.StrictMode>,
   document.getElementById('root')
