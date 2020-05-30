@@ -11,14 +11,11 @@ function Profile (props){
     let post = props.posts.map((p)=><Post mes={p.mes} ava={p.ava}/>); // Переделывание поста в реакт объект для дальнейшего вывода
     let textarea = React.createRef(); //аналог getElementById, только мы создаем ссылку на объект
     
-   
-    
 
     let send = ()=> props.dispatch({type:"ADD",txt:textarea.current.value}); // Вывод поста по кнопке
     let textareaChange =()=>props.dispatch({type:"profileBufText",txt:textarea.current.value });
 
     return(
-        
         <div className="Profile_Main">
             <div className="Profile_cont"><img className="Profile_logo" src={head} alt="head" /></div>
             <div className="Profile_user">
