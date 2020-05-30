@@ -14,8 +14,9 @@ function Profile (props){
    
     
 
-    let send = ()=>  props.dispatch({type:"ADD",txt:textarea.current.value}); // Вывод поста по кнопке
-    
+    let send = ()=> props.dispatch({type:"ADD",txt:textarea.current.value}); // Вывод поста по кнопке
+    let textareaChange =()=>props.dispatch({type:"profileBufText",txt:textarea.current.value });
+
     return(
         
         <div className="Profile_Main">
@@ -32,7 +33,7 @@ function Profile (props){
                 </div>
             </div>
             <div className="Posts">
-            <textarea  ref={textarea} className="Profile_postText" placeholder="Enter your text" ></textarea>
+            <textarea  onChange={textareaChange} value={props.dispatch({type:"getNewpost"})} ref={textarea} className="Profile_postText" placeholder="Enter your text" ></textarea>
             <div><button className="Profile_SendMessage" onClick={send} >Send</button> </div>
             </div>
             <br /><br />
