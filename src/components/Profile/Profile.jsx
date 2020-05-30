@@ -11,6 +11,7 @@ function Profile (props){
     let post = props.posts.map((p)=><Post mes={p.mes} ava={p.ava}/>); // Переделывание поста в реакт объект для дальнейшего вывода
     let textarea = React.createRef(); //аналог getElementById, только мы создаем ссылку на объект
     
+<<<<<<< HEAD
     let newpost = ()=>props.newPost(textarea.current.value); // Вытаскиваем текст их textarea и записываем в state
 
     //Пример функции для выводв текста из textarea   
@@ -19,6 +20,14 @@ function Profile (props){
             alert(textareaText);
     }; */
     
+=======
+   
+    
+
+    let send = ()=> props.dispatch({type:"ADD",txt:textarea.current.value}); // Вывод поста по кнопке
+    let textareaChange =()=>props.dispatch({type:"profileBufText",txt:textarea.current.value });
+
+>>>>>>> test
     return(
         
         <div className="Profile_Main">
@@ -35,19 +44,27 @@ function Profile (props){
                 </div>
             </div>
             <div className="Posts">
+<<<<<<< HEAD
             <textarea onChange={newpost}  ref={textarea}  className="Profile_postText" placeholder="Write message" value={props.bufPost.mes}></textarea>
             <div><button className="Profile_SendMessage" onClick={props.addPost} >Send</button> </div>
+=======
+            <textarea  onChange={textareaChange} value={props.dispatch({type:"getNewpost"})} ref={textarea} className="Profile_postText" placeholder="Enter your text" ></textarea>
+            <div><button className="Profile_SendMessage" onClick={send} >Send</button> </div>
+>>>>>>> test
             </div>
             <br /><br />
             
             {/*Вывод сообщений  из пропсов */ }
             {post}
             
+<<<<<<< HEAD
             {/*Вывод тестовых сообщений   */ }
             { /*
             <Post mes="Hello" ava="https://yt3.ggpht.com/a/AATXAJwcRz4MbWjSrTeWdpzfyVsPC97gRqnc_YC-qQ=s900-c-k-c0xffffffff-no-rj-mo"/> 
             <Post mes="Hello, my name is test"/> 
             */}
+=======
+>>>>>>> test
         </div>
 
     );

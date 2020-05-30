@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+<<<<<<< HEAD
 import store from './redux/state'
 
 
@@ -22,6 +23,23 @@ function Render(store) {
 Render(store);
 //Передаем функцию Render
 store.subscribeRender(Render);
+=======
+import {store,} from './redux/state'
+
+
+let renderDom =(store)=>{
+ReactDOM.render(
+  <React.StrictMode>
+    <App profInfo={store.state.profInfo} posts={store.state.posts} dialogsFriendList={store.state.dialogsFriendList}  dispatch={store.dispatch.bind(store)} />
+    
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+}
+store.subscribeRender(renderDom);
+renderDom(store);
+
+>>>>>>> test
 
 serviceWorker.unregister();
 
