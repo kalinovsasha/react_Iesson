@@ -23,7 +23,7 @@ function App(props) {
           <Route  path="/profile"> {/*Передача компонента внутри тега Route    */ }
           <Profile prof={props.state.profInfo} post={props.state.posts}  dispatch={props.dispatch}/>
           </Route>
-          <Route exact path="/Dialogs" component={()=><Dialogs friends={props.state.dialogsFriendList} messages={props.state.messages}/> }/> {/*Передача компонента через  component     */ }
+          <Route exact path="/Dialogs" render={()=><Dialogs friends={props.state.dialogsFriendList} messages={props.state.messages} dispatch={props.dispatch}/> }/>
           </Switch>
     </div>
     </div>
