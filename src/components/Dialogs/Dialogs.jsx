@@ -1,6 +1,7 @@
 import React from 'react';
 import "./Dialogs.css";
 import { Link, NavLink } from 'react-router-dom';
+import Message from '../Message/Message';
 
 let dialogText = React.createRef();
 let dialogSend = ()=>{
@@ -9,9 +10,12 @@ let dialogSend = ()=>{
     }
 
 function Dialogs(props) {
+    console.log(props.messages);
     let friend =props.friends.map((item)=><li><NavLink to={item.id}> {item.name}</NavLink></li>);
-    
+    let messages=props.messages.map((mes)=> <Message mes={mes.mes} id={mes.id} nick={mes.nick} ava={mes.ava}/>  )
+   
     return(
+       
         <div className="Dialogs_Main">
             <div className="Dialogs_Interlocutor">
             <section className="Dialogs_MesText">Messages</section>
@@ -22,13 +26,9 @@ function Dialogs(props) {
             </div>
             
             <div className="Dialog_MessagesList">
-                <div className="Dialog_Message">
-                    Hi
-                </div>
-                <div className="Dialog_Message">
-                    How are you?
-                </div>
-                
+                {/* Вывод сообщений */}
+                {messages}
+               
                 <div className="Dialog_SendMessage">
                     <textarea  ref={dialogText} className="Dialog_TextArea"></textarea>
                     <button onClick={dialogSend} className="Dialog_Send">Send Message</button>

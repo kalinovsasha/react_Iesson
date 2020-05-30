@@ -3,7 +3,7 @@ import "./Profile.css";
 import head from '../../img/head.jpg';
 import ava from '../../img/unnamed.jpg';
 import Post from '../Posts/Posts';
-
+import {addPostAction, profileBufTextAction} from '../../redux/state'
 
 
 function Profile (props){
@@ -12,10 +12,11 @@ function Profile (props){
     let textarea = React.createRef(); //аналог getElementById, только мы создаем ссылку на объект
     
    
-    
+   
 
-    let send = ()=> props.dispatch({type:"ADD",txt:textarea.current.value}); // Вывод поста по кнопке
-    let textareaChange =()=>props.dispatch({type:"profileBufText",txt:textarea.current.value });
+    
+    let send = ()=> props.dispatch(addPostAction()); // Вывод поста по кнопке
+    let textareaChange =()=>props.dispatch(profileBufTextAction(textarea.current.value));
 
     return(
         
@@ -25,6 +26,7 @@ function Profile (props){
                 <div className="Profile_avatar"> <img className="Profile_ava" src={avatar} alt="head" /></div>
                 <div className="Profile_info">
                     <ul>
+                        <li>Имя : {props.prof.name}</li>
                         <li>Дата рождения: {props.prof.birthday}</li>
                         <li>Страна: {props.prof.country}</li>
                         <li>Образование: {props.prof.educate}</li>

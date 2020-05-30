@@ -8,7 +8,6 @@ const LeftMenu = ()=>{
             <ul>
                 <li><Link to="/Profile">Profile</Link></li>
                 <li><Link to='/Dialogs'>Dialogs</Link> </li>
-                <li>Messages</li>
                 <li>News</li>
                 <li>Music</li>
                 <li>Settings</li>

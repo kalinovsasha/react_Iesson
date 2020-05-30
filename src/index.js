@@ -9,7 +9,7 @@ import {store,} from './redux/state'
 let renderDom =(props)=>{
 ReactDOM.render(
   <React.StrictMode>
-    <App profInfo={props.state.profInfo} posts={props.state.posts} dialogsFriendList={props.state.dialogsFriendList}  dispatch={props.dispatch.bind(store)} />
+    <App state={props.state}  dispatch={props.dispatch.bind(store)} />
     
   </React.StrictMode>,
   document.getElementById('root')
