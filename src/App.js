@@ -19,7 +19,7 @@ function App(props) {
       <div className="Main">
           <LeftMenu/>
           <Switch>
-          <Route exact path="/" component={()=><Profile prof={props.profInfo} post={props.posts}  dispatch={props.dispatch} /> }/> {/*Передача компонента через  component     */ }
+          <Route exact path="/" render={()=><Profile prof={props.profInfo} post={props.posts}  dispatch={props.dispatch} /> }/> {/*Передача компонента через  component     */ }
           <Route  path="/profile"> {/*Передача компонента внутри тега Route    */ }
           <Profile prof={props.profInfo} post={props.posts}  dispatch={props.dispatch}/>
           </Route>

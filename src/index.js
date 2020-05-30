@@ -6,10 +6,10 @@ import * as serviceWorker from './serviceWorker';
 import {store,} from './redux/state'
 
 
-let renderDom =(store)=>{
+let renderDom =(props)=>{
 ReactDOM.render(
   <React.StrictMode>
-    <App profInfo={store.state.profInfo} posts={store.state.posts} dialogsFriendList={store.state.dialogsFriendList}  dispatch={store.dispatch.bind(store)} />
+    <App profInfo={props.state.profInfo} posts={props.state.posts} dialogsFriendList={props.state.dialogsFriendList}  dispatch={props.dispatch.bind(store)} />
     
   </React.StrictMode>,
   document.getElementById('root')
