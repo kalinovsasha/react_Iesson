@@ -8,9 +8,9 @@ let dialogText = React.createRef();
 
 
 function Dialogs(props) {
-    let friend =props.friends.map((item)=><li><NavLink to={item.id}> {item.name}</NavLink></li>);
-    let messages=props.messages.map((mes)=> <Message mes={mes.mes} id={mes.id} nick={mes.nick} ava={mes.ava}/>  );
-    let getMessage=()=>props.dispatch({type:"getbufMessage"});
+    let friend =props.state.dialogsFriendList.map((item)=><li><NavLink to={item.id}> {item.name}</NavLink></li>);
+    let messages=props.state.messages.map((mes)=> <Message mes={mes.mes} id={mes.id} nick={mes.nick} ava={mes.ava}/>  );
+    let getMessage=props.state.bufMessage.mes;
     let sendMessage=()=>props.dispatch({type:"addMessage"});
     function bufMessage(){return props.dispatch(dialogbufMessagetAction(dialogText.current.value)) }
 
@@ -30,7 +30,7 @@ function Dialogs(props) {
                 {messages}
                
                 <div className="Dialog_SendMessage">
-                    <textarea onChange={bufMessage} value={getMessage()}  ref={dialogText} className="Dialog_TextArea"></textarea>
+                    <textarea onChange={bufMessage} value={getMessage}  ref={dialogText} className="Dialog_TextArea"></textarea>
                     <button onClick={sendMessage} className="Dialog_Send">Send Message</button>
                 </div>
             </div>
