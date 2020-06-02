@@ -1,3 +1,6 @@
+import { profileReducer } from "./profile-reducer";
+import dialogReducer from "./dialogReducer";
+
 const addMessage="addMessage";
 const addPost = "ADD-POST";
 const profileBufText="profileBufText";
@@ -27,28 +30,9 @@ export let store={
   },
 
   dispatch(action){
-    
-    switch (action.type) {
-      case addPost:
-        this.state.profile.posts.push({mes:this.state.profile.newPost.mes, ava:"https://sun9-56.userapi.com/c836234/v836234894/5aedd/--93nsktQsI.jpg"});
-        this.renderDom(store); 
-        break;
-      case profileBufText:
-        this.state.profile.newPost={mes:action.mes, ava:"https://sun9-56.userapi.com/c836234/v836234894/5aedd/--93nsktQsI.jpg"};
-        this.renderDom(store); 
-        break; 
-      case dialogbufMessage:
-          this.state.dialogs.bufMessage={id:action.id, nick:action.nick, mes:action.mes, ava:action.ava };
-          this.renderDom(store);
-          break;
-        case addMessage:
-          this.state.dialogs.messages.push(this.state.dialogs.bufMessage);
-          this.renderDom(store); 
-          break;
-    
-    default:
-      alert( "Ошибка" );
-    }
+    this.state.profile=profileReducer(store.state.profile,action);
+    this.state.dialogs=dialogReducer(store.state.dialogs,action);
+    this.renderDom(store); 
   }
 
 
