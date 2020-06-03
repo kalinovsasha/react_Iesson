@@ -1,10 +1,17 @@
 import { createStore, combineReducers } from "redux";
+import { profileReducer } from "./profile-reducer";
+import dialogReducer from "./dialogReducer";
 
 
-let reducers = combineReducers();
+let reducers = combineReducers(
+    {
+        profile:profileReducer,
+        dialogs:dialogReducer,
+
+    });
 
 
-let store = createStore();
+let store = createStore(reducers);
 
 
 

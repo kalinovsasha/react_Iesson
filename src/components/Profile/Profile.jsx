@@ -9,7 +9,6 @@ function Profile (props){
     let avatar=props.state.profInfo.ava;
     let post = props.state.posts.map((p)=><Post mes={p.mes} ava={p.ava}/>); // Переделывание поста в реакт объект для дальнейшего вывода
     let textarea = React.createRef(); //аналог getElementById, только мы создаем ссылку на объект
-    
     let send = ()=> props.dispatch(addPostAction()); // Вывод поста по кнопке
     let textareaChange =()=>props.dispatch(profileBufTextAction(textarea.current.value));
 
@@ -30,7 +29,7 @@ function Profile (props){
                 </div>
             </div>
             <div className="Posts">
-            <textarea  onChange={textareaChange} value={props.mes} ref={textarea} className="Profile_postText" placeholder="Enter your text" ></textarea>
+            <textarea  onChange={textareaChange} value={props.state.newPost.mes} ref={textarea} className="Profile_postText" placeholder="Enter your text" ></textarea>
             <div><button className="Profile_SendMessage" onClick={send} >Send</button> </div>
             </div>
             <br /><br />
