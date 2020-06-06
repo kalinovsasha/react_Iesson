@@ -10,7 +10,6 @@ let renderDom =(props)=>{
 ReactDOM.render(
   <React.StrictMode>
     <App state={props.getState()}  dispatch={props.dispatch.bind(store)} />
-    
   </React.StrictMode>,
   document.getElementById('root')
 );
