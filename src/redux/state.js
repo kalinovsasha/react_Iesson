@@ -35,8 +35,6 @@ export let store={
     this.renderDom(store); 
   }
 
-
-
 }
 
 export function addPostAction(){

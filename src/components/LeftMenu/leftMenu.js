@@ -6,7 +6,7 @@ const LeftMenu = ()=>{
         <div className="LeftMenu">
         <nav className="Main_Nav">
             <ul>
-                <li><Link to="/Profile">Profile(без контейнера)</Link></li>
+                <li><Link to="/Profile">Profile</Link></li>
                 <li><Link to="/Prof">Profile_Container</Link></li>
                 <li><Link to='/Dialogs'>Dialogs</Link> </li>
                 <li>News</li>

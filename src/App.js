@@ -4,7 +4,7 @@ import './App.css';
 import Header from './components/Header/header';
 import LeftMenu from './components/LeftMenu/leftMenu';
 import Profile from './components/Profile/Profile';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import {Route, Switch } from 'react-router-dom';
 import Dialogs from './components/Dialogs/Dialogs';
 import Profile2 from './components/Profile/profileContainer';
 
@@ -12,7 +12,6 @@ import Profile2 from './components/Profile/profileContainer';
 
 function App(props) {
   return (
-    <BrowserRouter>
     <div className="App">
       <Header/>
       <div className="Main">
@@ -29,7 +28,7 @@ function App(props) {
           </Switch>
     </div>
     </div>
-    </BrowserRouter>
+   
   );
 }
 
