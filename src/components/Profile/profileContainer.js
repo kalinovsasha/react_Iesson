@@ -17,7 +17,6 @@ function ProfileContainer (props){
             {
                 (store)=>{
                      let state =store.getState();
-                     console.log(store.getState());
                      let avatar=state.profile.profInfo.ava;
                      let post = state.profile.posts.map((p)=><Post mes={p.mes} ava={p.ava}/>); // Переделывание поста в реакт объект для дальнейшего вывода
                      let send = ()=> store.dispatch(addPostAction()); // Вывод поста по кнопке
